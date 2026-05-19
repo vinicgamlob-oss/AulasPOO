@@ -296,7 +296,7 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     }//GEN-LAST:event_btnvezesActionPerformed
 
     private void btndivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivActionPerformed
-       this.n1 = (int) Double.parseDouble(txtVisor.getText());
+       n1 = (int) Double.parseDouble(txtVisor.getText());
        
        operacoes = "/";
        
