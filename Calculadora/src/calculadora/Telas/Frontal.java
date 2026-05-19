@@ -52,6 +52,7 @@ public class Frontal extends javax.swing.JFrame {
         btn0 = new javax.swing.JButton();
         txtVisor = new javax.swing.JTextField();
         btnigual = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         jButton7.setText("jButton1");
 
@@ -90,21 +91,28 @@ public class Frontal extends javax.swing.JFrame {
         btn9.addActionListener(this::btn9ActionPerformed);
 
         btndiv.setText("/");
+        btndiv.addActionListener(this::btndivActionPerformed);
 
         btnmais.setText("+");
         btnmais.addActionListener(this::btnmaisActionPerformed);
 
         btnmenos.setText("-");
+        btnmenos.addActionListener(this::btnmenosActionPerformed);
 
         btnvezes.setText("x");
+        btnvezes.addActionListener(this::btnvezesActionPerformed);
 
         btn0.setText("0");
+        btn0.addActionListener(this::btn0ActionPerformed);
 
         txtVisor.setEditable(false);
         txtVisor.addActionListener(this::txtVisorActionPerformed);
 
         btnigual.setText("=");
         btnigual.addActionListener(this::btnigualActionPerformed);
+
+        jButton2.setText("AC");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,36 +128,38 @@ public class Frontal extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btn3)
                                     .addComponent(btn0))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnigual, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btndiv))
+                                        .addComponent(btnigual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
                                         .addComponent(btn6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btn9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnvezes))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnmenos))
+                                        .addComponent(btn9)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btndiv)
+                                    .addComponent(btnvezes)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnmais)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnmais)))
-                        .addContainerGap(58, Short.MAX_VALUE))
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnmenos)))
+                        .addContainerGap(39, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtVisor)
                         .addContainerGap())))
@@ -157,14 +167,15 @@ public class Frontal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addComponent(txtVisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn4)
                     .addComponent(btn7)
                     .addComponent(btnmais)
-                    .addComponent(btn1))
+                    .addComponent(btn1)
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn2)
@@ -239,7 +250,7 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnigualActionPerformed
-        n2 = n1 = (int) Double.parseDouble(txtVisor.getText());
+        n2 =  (int) Double.parseDouble(txtVisor.getText());
         
         
         
@@ -267,6 +278,38 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
         
         
     }//GEN-LAST:event_btnigualActionPerformed
+
+    private void btnmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenosActionPerformed
+ n1 = (int) Double.parseDouble(txtVisor.getText());
+       
+       operacoes = "-";
+       
+       txtVisor.setText("");
+    }//GEN-LAST:event_btnmenosActionPerformed
+
+    private void btnvezesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvezesActionPerformed
+       n1 = (int) Double.parseDouble(txtVisor.getText());
+       
+       operacoes = "*";
+       
+       txtVisor.setText("");
+    }//GEN-LAST:event_btnvezesActionPerformed
+
+    private void btndivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivActionPerformed
+       this.n1 = (int) Double.parseDouble(txtVisor.getText());
+       
+       operacoes = "/";
+       
+       txtVisor.setText("");
+    }//GEN-LAST:event_btndivActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        txtVisor.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        txtVisor.setText(txtVisor.getText() + 0);  
+    }//GEN-LAST:event_btn0ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,6 +353,7 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     private javax.swing.JButton btnmenos;
     private javax.swing.JButton btnvezes;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton7;
     private javax.swing.JTextField txtVisor;
     // End of variables declaration//GEN-END:variables
