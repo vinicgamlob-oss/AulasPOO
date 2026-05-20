@@ -16,9 +16,9 @@ public class Frontal extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Frontal.class.getName());
         
     double resultado = 0;
-    int n1;
-    int n2;
-    String Visor ="";
+    double n1;
+    double n2;
+    String Visor ="Ola seja bem vindo";
     String operacoes = "";
     Operacoes o = new Operacoes();
     public Frontal() {
@@ -52,7 +52,9 @@ public class Frontal extends javax.swing.JFrame {
         btn0 = new javax.swing.JButton();
         txtVisor = new javax.swing.JTextField();
         btnigual = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnzera = new javax.swing.JButton();
+        btnponto = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jButton7.setText("jButton1");
 
@@ -63,56 +65,80 @@ public class Frontal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         setResizable(false);
 
+        btn1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn1.setText("1");
         btn1.addActionListener(this::btn1ActionPerformed);
 
+        btn2.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn2.setText("2");
         btn2.addActionListener(this::btn2ActionPerformed);
 
+        btn3.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn3.setText("3");
         btn3.addActionListener(this::btn3ActionPerformed);
 
+        btn4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn4.setText("4");
         btn4.addActionListener(this::btn4ActionPerformed);
 
+        btn5.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn5.setText("5");
         btn5.addActionListener(this::btn5ActionPerformed);
 
+        btn6.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn6.setText("6");
         btn6.addActionListener(this::btn6ActionPerformed);
 
+        btn7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn7.setText("7");
         btn7.addActionListener(this::btn7ActionPerformed);
 
+        btn8.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn8.setText("8");
         btn8.addActionListener(this::btn8ActionPerformed);
 
+        btn9.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn9.setText("9");
         btn9.addActionListener(this::btn9ActionPerformed);
 
+        btndiv.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btndiv.setText("/");
         btndiv.addActionListener(this::btndivActionPerformed);
 
+        btnmais.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnmais.setText("+");
         btnmais.addActionListener(this::btnmaisActionPerformed);
 
+        btnmenos.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnmenos.setText("-");
         btnmenos.addActionListener(this::btnmenosActionPerformed);
 
+        btnvezes.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnvezes.setText("x");
         btnvezes.addActionListener(this::btnvezesActionPerformed);
 
+        btn0.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btn0.setText("0");
         btn0.addActionListener(this::btn0ActionPerformed);
 
         txtVisor.setEditable(false);
+        txtVisor.setFont(new java.awt.Font("Tempus Sans ITC", 3, 18)); // NOI18N
         txtVisor.addActionListener(this::txtVisorActionPerformed);
 
+        btnigual.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         btnigual.setText("=");
         btnigual.addActionListener(this::btnigualActionPerformed);
 
-        jButton2.setText("AC");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        btnzera.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        btnzera.setText("AC");
+        btnzera.addActionListener(this::btnzeraActionPerformed);
+
+        btnponto.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        btnponto.setText(".");
+        btnponto.addActionListener(this::btnpontoActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
+        jLabel1.setText("Seja Bem Vindo ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +176,7 @@ public class Frontal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnmais)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnzera, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -158,16 +184,23 @@ public class Frontal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnmenos)))
-                        .addContainerGap(39, Short.MAX_VALUE))
+                                .addComponent(btnmenos)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnponto)))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtVisor)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(txtVisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -175,13 +208,14 @@ public class Frontal extends javax.swing.JFrame {
                     .addComponent(btn7)
                     .addComponent(btnmais)
                     .addComponent(btn1)
-                    .addComponent(jButton2))
+                    .addComponent(btnzera))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn2)
                     .addComponent(btn5)
                     .addComponent(btn8)
-                    .addComponent(btnmenos))
+                    .addComponent(btnmenos)
+                    .addComponent(btnponto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn3)
@@ -210,11 +244,10 @@ public class Frontal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void txtVisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVisorActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtVisorActionPerformed
 
     private void btnmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmaisActionPerformed
-       n1 = (int) Double.parseDouble(txtVisor.getText());
+       n1 =  Double.parseDouble(txtVisor.getText());
        
        operacoes = "+";
        
@@ -250,7 +283,7 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnigualActionPerformed
-        n2 =  (int) Double.parseDouble(txtVisor.getText());
+        n2 =  Double.parseDouble(txtVisor.getText());
         
         
         
@@ -274,13 +307,13 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
         break;
 } 
         
-        txtVisor.setText(String.valueOf(resultado));
+        txtVisor.setText(String.format("%.4f", resultado));
         
         
     }//GEN-LAST:event_btnigualActionPerformed
 
     private void btnmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenosActionPerformed
- n1 = (int) Double.parseDouble(txtVisor.getText());
+ n1 =  Double.parseDouble(txtVisor.getText());
        
        operacoes = "-";
        
@@ -288,7 +321,7 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     }//GEN-LAST:event_btnmenosActionPerformed
 
     private void btnvezesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvezesActionPerformed
-       n1 = (int) Double.parseDouble(txtVisor.getText());
+       n1 = Double.parseDouble(txtVisor.getText());
        
        operacoes = "*";
        
@@ -296,20 +329,24 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     }//GEN-LAST:event_btnvezesActionPerformed
 
     private void btndivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivActionPerformed
-       n1 = (int) Double.parseDouble(txtVisor.getText());
+       n1 =  Double.parseDouble(txtVisor.getText());
        
        operacoes = "/";
        
        txtVisor.setText("");
     }//GEN-LAST:event_btndivActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnzeraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnzeraActionPerformed
         txtVisor.setText("");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnzeraActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         txtVisor.setText(txtVisor.getText() + 0);  
     }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btnpontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpontoActionPerformed
+      txtVisor.setText(txtVisor.getText() + ".");
+    }//GEN-LAST:event_btnpontoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,10 +388,12 @@ txtVisor.setText(txtVisor.getText() + 5);          // TODO add your handling cod
     private javax.swing.JButton btnigual;
     private javax.swing.JButton btnmais;
     private javax.swing.JButton btnmenos;
+    private javax.swing.JButton btnponto;
     private javax.swing.JButton btnvezes;
+    private javax.swing.JButton btnzera;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtVisor;
     // End of variables declaration//GEN-END:variables
 }
